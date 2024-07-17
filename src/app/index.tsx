@@ -3,7 +3,7 @@ import { Header } from "../components/header";
 
 import Constants from 'expo-constants';
 
-const statusBarHeight = Constants.statusBarHeight
+const statusBarHeight = Constants.statusBarHeight;
 
 export default function Index() {
   return (
