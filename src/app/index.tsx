@@ -1,5 +1,6 @@
 import { Text, View, ScrollView } from "react-native";
 import { Header } from "../components/header";
+import { Banner } from "../components/banner";
 
 import Constants from 'expo-constants';
 
@@ -12,10 +13,11 @@ export default function Index() {
      className="bg-slate-200"
      showsVerticalScrollIndicator={false}
     >
-     <View className="w-full" style={{ marginTop: statusBarHeight + 8 }}>
+     <View className="w-full px-4" style={{ marginTop: statusBarHeight + 8 }}>
        <Header/>
-     </View>
 
+       <Banner/>
+     </View>
     </ScrollView>
   );
 }
