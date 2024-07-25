@@ -1,7 +1,11 @@
 import { Text, View, ScrollView } from "react-native";
+
 import { Header } from "../components/header";
 import { Banner } from "../components/banner";
 import { Search } from "../components/search";
+import { Section } from "../components/section";
+import { TrendingFoods } from "../components/trending";
+import { Restaurants } from "../components/restaurants";
 
 import Constants from 'expo-constants';
 
@@ -17,10 +21,29 @@ export default function Index() {
      <View className="w-full px-4" style={{ marginTop: statusBarHeight + 8 }}>
        <Header/>
 
-       <Banner/>
+       <Banner/> 
        
        <Search/>
      </View>
+
+     <Section
+       name="Pedidos em Alta"
+       label="Veja mais"
+       action={ () => console.log("Veja mais")}
+       size="text-2xl"
+      />
+
+      <TrendingFoods/>
+
+      <Section
+       name="Favoritos"
+       label="Veja mais"
+       action={ () => console.log("Veja mais favoritos")}
+       size="text-2xl"
+      />
+
+      <Restaurants/>
+
     </ScrollView>
   );
 }
