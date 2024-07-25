@@ -44,6 +44,13 @@ export default function Index() {
 
       <Restaurants/>
 
+      <Section
+        name="Restaurantes"
+        label="Veja todos"
+        action={ () => console.log("CLICOU NO RESTAURANTES")}
+        size="text-xl"
+      />
+
     </ScrollView>
   );
 }
