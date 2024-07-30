@@ -1,10 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
 import { FlatList } from 'react-native';
-import { FoodItem } from './food';
+import { CardHorizontalFood } from './food'
+
 
 export interface FoodProps{
-  id: string;  
-  name: string;  
+  id: string;
+  name: string;
   price: number;
   time: string;
   delivery: number;
@@ -13,8 +14,7 @@ export interface FoodProps{
   restaurantId: string;
 }
 
-
-export function TrendingFoods(){
+export function TrendingFoods() {
   const [foods, setFoods] = useState<FoodProps[]>([])
 
   useEffect(() => {
@@ -25,15 +25,15 @@ export function TrendingFoods(){
     }
 
     getFoods();
-  })
-  
-  return(
-    <FlatList
-     data={foods}
-     renderItem={ ({item}) => <FoodItem food={item} /> }
-     horizontal={true}
-     contentContainerStyle={{ gap:14, paddingLeft:16, paddingRight:16 }}
-     showsHorizontalScrollIndicator={false}
-    />
+  }, [])
+
+ return (
+   <FlatList
+      data={foods}
+      renderItem={ ({ item }) => <CardHorizontalFood food={item} /> }
+      horizontal={true}
+      contentContainerStyle={{ gap: 14, paddingLeft: 16, paddingRight: 16}}
+      showsHorizontalScrollIndicator={false}
+   />
   );
 }

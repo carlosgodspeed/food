@@ -1,45 +1,45 @@
-import { Text, View, ScrollView } from "react-native";
+import { Text, View, ScrollView} from "react-native";
+import Constants from 'expo-constants'
 
 import { Header } from "../components/header";
 import { Banner } from "../components/banner";
 import { Search } from "../components/search";
-import { Section } from "../components/section";
+import { Section } from '../components/section'
 import { TrendingFoods } from "../components/trending";
 import { Restaurants } from "../components/restaurants";
+import { RestaurantVerticalList } from '../components/list';
 
-import Constants from 'expo-constants';
 
 const statusBarHeight = Constants.statusBarHeight;
 
 export default function Index() {
   return (
-    <ScrollView
-     style={{ flex:1 }}
-     className="bg-slate-200"
-     showsVerticalScrollIndicator={false}
+    <ScrollView 
+      style={{ flex: 1 }} 
+      className="bg-slate-200" 
+      showsVerticalScrollIndicator={false}
     >
-     <View className="w-full px-4" style={{ marginTop: statusBarHeight + 8 }}>
-       <Header/>
+      <View className="w-full px-4" style={{ marginTop: statusBarHeight + 8 }}>
+        <Header/>
 
-       <Banner/> 
-       
-       <Search/>
-     </View>
+        <Banner/>
 
-     <Section
-       name="Pedidos em Alta"
-       label="Veja mais"
-       action={ () => console.log("Veja mais")}
-       size="text-2xl"
+        <Search/>
+      </View>
+
+      <Section
+        name="Comidas em alta"
+        label="Veja mais"
+        action={ () => console.log("CLICOU NO VEJA MAIS")}
+        size="text-2xl"
       />
-
       <TrendingFoods/>
 
       <Section
-       name="Favoritos"
-       label="Veja mais"
-       action={ () => console.log("Veja mais favoritos")}
-       size="text-2xl"
+        name="Famosos no DevFood"
+        label="Veja todos"
+        action={ () => console.log("CLICOU NO Famosos")}
+        size="text-xl"
       />
 
       <Restaurants/>
@@ -50,6 +50,8 @@ export default function Index() {
         action={ () => console.log("CLICOU NO RESTAURANTES")}
         size="text-xl"
       />
+
+      <RestaurantVerticalList/>
 
     </ScrollView>
   );
